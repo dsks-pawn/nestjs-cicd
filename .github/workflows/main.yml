@@ -10,7 +10,6 @@ on:
     type: [opened, reopened, synchronized]
 jobs:
   publish:
-    if: github.actor!= 'dependabot[bot]'
     name: Publish graph
     runs-on: ubuntu-latest
     steps:
