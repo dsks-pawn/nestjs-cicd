@@ -22,5 +22,3 @@ jobs:
       - uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           github-token: ${{ secrets.NEW_SECRET }}
-          thresould: 80
-          skip-step: install
