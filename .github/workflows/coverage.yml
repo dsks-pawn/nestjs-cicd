@@ -5,9 +5,10 @@ on:
     branches:
       - 'main'
       - 'develop'
-    pull_request_target:
-      - 'main'
-      - 'develop'
+  pull_request_target:
+    branches:
+      - develop
+      - main
 jobs:
   Coverage-report:
     runs-on: ubuntu-latest
