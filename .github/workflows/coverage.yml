@@ -20,3 +20,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: npm install
       - uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.SECRET_TOKEN }}
+          thresould: 80
+          skip-step: install
