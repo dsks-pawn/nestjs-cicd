@@ -7,11 +7,15 @@ on:
       - 'develop'
   pull_request_target:
     branches:
-      - develop
       - main
+      - develop
 jobs:
   Coverage-report:
     runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+      issues: 'write'
     steps:
       - uses: actions/checkout@v3
       - run: npm install
