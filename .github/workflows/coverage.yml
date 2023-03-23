@@ -5,13 +5,15 @@ on:
     branches:
       - 'main'
       - 'develop'
-  pull_request:
-    type: [opened, reopened, synchronized]
+    pull_request_target:
+      - 'main'
+      - 'develop'
 jobs:
   Coverage-report:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: npm install
       - uses: ArtiomTr/jest-coverage-report-action@v2
-      - run: npm install
-      -
+        with:
+          github-token: ${{ secrets.SECRET_TOKEN }}
